@@ -1,20 +1,20 @@
-import React from "react"
-import { Route } from "react-router-dom"
-import { useDispatch, useSelector } from "react-redux"
-import { Container, Navbar, Nav, NavDropdown } from "react-bootstrap"
-import { LinkContainer } from "react-router-bootstrap"
-import SearchBox from "./SearchBox"
-import { logout } from "../actions/userActions"
+import React from "react";
+import { Route } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { Container, Navbar, Nav, NavDropdown } from "react-bootstrap";
+import { LinkContainer } from "react-router-bootstrap";
+import SearchBox from "./SearchBox";
+import { logout } from "../actions/userActions";
 
 const Header = () => {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
-  const userLogin = useSelector((state) => state.userLogin)
-  const { userInfo } = userLogin
+  const userLogin = useSelector((state) => state.userLogin);
+  const { userInfo } = userLogin;
 
   const logoutHandler = () => {
-    dispatch(logout())
-  }
+    dispatch(logout());
+  };
 
   return (
     <header>
@@ -32,7 +32,7 @@ const Header = () => {
                   <i className="fas fa-shopping-cart"></i> Cart
                 </Nav.Link>
               </LinkContainer>
-              {userInfo ? (
+              {Object.keys(userInfo).length > 0 ? (
                 <NavDropdown title={userInfo.name} id="username">
                   <LinkContainer to="/profile">
                     <NavDropdown.Item>Profile</NavDropdown.Item>
@@ -66,7 +66,7 @@ const Header = () => {
         </Container>
       </Navbar>
     </header>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
