@@ -32,7 +32,7 @@ const Header = () => {
                   <i className="fas fa-shopping-cart"></i> Cart
                 </Nav.Link>
               </LinkContainer>
-              {Object.keys(userInfo).length > 0 ? (
+              {userInfo && Object.keys(userInfo).length > 0 ? (
                 <NavDropdown title={userInfo.name} id="username">
                   <LinkContainer to="/profile">
                     <NavDropdown.Item>Profile</NavDropdown.Item>
