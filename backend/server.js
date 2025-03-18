@@ -10,6 +10,8 @@ import userRoutes from "./routes/userRoutes.js";
 import orderRoutes from "./routes/orderRoutes.js";
 import uploadRoutes from "./routes/uploadRoutes.js";
 import logger from "./utils/logger.js";
+import swaggerUi from 'swagger-ui-express'
+import fs from 'fs'
 
 dotenv.config();
 
@@ -20,6 +22,9 @@ const app = express();
 if (process.env.NODE_ENV === "development") {
   app.use(morgan("dev"));
 }
+const rawData = fs.readFileSync("openapi.json", "utf-8");
+const swaggerDocument = JSON.parse(rawData);
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 app.use(express.json());
 
