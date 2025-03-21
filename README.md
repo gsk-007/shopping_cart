@@ -21,9 +21,9 @@ E-commerce platforms often struggle with intuitive and responsive cart managemen
 
 ## 🛠️ Technologies Used  
 
-- **Frontend:** JavaScript (React, Vue, or other frameworks – specify if applicable)  
-- **Backend:** Node.js / Express.js (or specify other backend frameworks)  
-- **Database:** MongoDB, PostgreSQL, or Firebase (if applicable)  
+- **Frontend:** React, Bootstrap
+- **Backend:** Node.js / Express.js, Winston (logging), Swagger (API Docs) 
+- **Database:** MongoDB
 
 ## 📦 Installation  
 
